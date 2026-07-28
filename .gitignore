@@ -1,0 +1,23 @@
+# Dépendances
+node_modules/
+
+# Build
+dist/
+
+# Fichiers générés
+*.pdf
+*.pptx
+generate-pdf.mjs
+generate-pptx.mjs
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Environnement
+.env
+.env.local
