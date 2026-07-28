@@ -1,6 +1,8 @@
 # 🚀 ProgressMist
 
 > Une application moderne de suivi de candidatures conçue pour aider les étudiants et les chercheurs d'emploi à organiser efficacement leurs recherches.
+>
+> 🌐 **Lien :** https://elgatoo00.github.io/ProgressMist/#/dashboard
 
 ## 📸 Aperçu
 
@@ -16,8 +18,6 @@
 
 <img width="2560" height="1238" alt="image" src="https://github.com/user-attachments/assets/48df60b3-29cd-469e-800c-67f50159891b" />
 
-
-🌐 **Lien :** https://elgatoo00.github.io/ProgressMist/#/dashboard
 
 ---
 
