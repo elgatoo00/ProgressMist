@@ -18,66 +18,49 @@
     font-family: system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.7;
-    max-width: 900px;
+    line-height: 1.8;
+    max-width: 750px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 24px;
   }
   h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     background: linear-gradient(135deg, #a855f7, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   h2 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     color: #a855f7;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
+    margin-top: 44px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
     border-bottom: 1px solid var(--border);
   }
   h3 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #c084fc;
-    margin-top: 28px;
-    margin-bottom: 10px;
+    margin-top: 24px;
+    margin-bottom: 8px;
   }
-  p, li { color: var(--muted); margin-bottom: 12px; }
-  ul, ol { padding-left: 24px; margin-bottom: 16px; }
-  li { margin-bottom: 6px; }
-  .screenshot {
+  p, li { color: var(--muted); margin-bottom: 8px; }
+  ul, ol { padding-left: 24px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; }
+  .box {
     background: var(--surface);
-    border: 2px dashed var(--border);
-    border-radius: 12px;
-    padding: 40px 20px;
-    text-align: center;
-    margin: 20px 0;
-    color: #6b7280;
-    font-style: italic;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 16px 0;
   }
-  .screenshot span { display: block; font-size: 0.85em; margin-top: 4px; }
-  .badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 999px;
-    font-size: 0.8em;
-    font-weight: 600;
-    margin: 0 4px;
-  }
-  .badge-green { background: #22c55e20; color: #4ade80; }
-  .badge-red { background: #ef444420; color: #f87171; }
-  .badge-blue { background: #3b82f620; color: #60a5fa; }
-  .badge-orange { background: #f9731620; color: #fb923c; }
-  .badge-purple { background: #a855f720; color: #c084fc; }
+  .box ul { margin-bottom: 0; }
   .tip {
     background: #7c3aed15;
     border-left: 3px solid #7c3aed;
     border-radius: 0 8px 8px 0;
     padding: 12px 16px;
-    margin: 16px 0;
+    margin: 14px 0;
     color: #c4b5fd;
     font-size: 0.95em;
   }
@@ -88,7 +71,7 @@
   }
   .steps li {
     counter-increment: step;
-    padding: 8px 0 8px 36px;
+    padding: 6px 0 6px 34px;
     position: relative;
     color: var(--muted);
   }
@@ -96,508 +79,327 @@
     content: counter(step);
     position: absolute;
     left: 0;
-    top: 8px;
-    width: 22px;
-    height: 22px;
+    top: 6px;
+    width: 20px;
+    height: 20px;
     background: var(--primary);
     color: white;
     border-radius: 50%;
-    font-size: 0.75em;
+    font-size: 0.7em;
     font-weight: bold;
     text-align: center;
-    line-height: 22px;
+    line-height: 20px;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 0.9em;
-  }
-  th, td {
-    padding: 10px 14px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-  }
-  th { color: var(--text); font-weight: 600; }
-  td { color: var(--muted); }
-  .toc { background: var(--surface); border-radius: 12px; padding: 20px 28px; margin: 32px 0; }
+  .toc { background: var(--surface); border-radius: 10px; padding: 18px 24px; margin: 28px 0; }
   .toc a { color: #a855f7; text-decoration: none; }
   .toc a:hover { text-decoration: underline; }
   footer {
-    margin-top: 60px;
+    margin-top: 50px;
     padding-top: 20px;
     border-top: 1px solid var(--border);
     text-align: center;
     color: #64748b;
     font-size: 0.85em;
   }
+  footer a { color: #a855f7; }
   @media print {
     body { background: white; color: #111; max-width: 100%; padding: 20px; }
     h2 { color: #7c3aed; }
-    .screenshot { border: 1px dashed #ccc; }
     .tip { background: #f3f0ff; }
-    .toc { background: #f8f5ff; }
-    p, li, td { color: #444; }
+    .toc, .box { background: #f8f5ff; }
+    p, li { color: #444; }
   }
 </style>
 </head>
 <body>
 
 <h1>ProgressMist</h1>
-<p style="font-size:1.2em;color:#a855f7;margin-bottom:4px;"><strong>Guide d'utilisation complet</strong></p>
+<p style="font-size:1.15em;color:#a855f7;margin-bottom:2px;"><strong>Guide d'utilisation</strong></p>
 <p>Never lose track of your job applications</p>
 
 <!-- TABLE DES MATIÈRES -->
 <div class="toc">
 <strong style="color:var(--text)">📋 Sommaire</strong>
-<ol style="margin-top:12px;">
-  <li><a href="#intro">Introduction</a></li>
-  <li><a href="#demarrage">Premiers pas</a></li>
-  <li><a href="#dashboard">Le Dashboard</a></li>
-  <li><a href="#creer">Créer une candidature</a> — formulaire + assistant</li>
-  <li><a href="#detail">Fiche détail d'une candidature</a></li>
-  <li><a href="#kanban">Vue Kanban</a></li>
-  <li><a href="#tableau">Vue Tableau</a></li>
-  <li><a href="#calendrier">Calendrier</a></li>
-  <li><a href="#negociation">Page Négociation</a></li>
-  <li><a href="#analytics">Analytics (statistiques)</a></li>
-  <li><a href="#entreprises">Suivi des entreprises</a></li>
-  <li><a href="#parametres">Paramètres</a></li>
-  <li><a href="#comptearebours">Compte à rebours</a></li>
-  <li><a href="#astuces">Astuces & bonnes pratiques</a></li>
+<ol style="margin-top:10px;">
+  <li><a href="#cestquoi">C'est quoi ProgressMist ?</a></li>
+  <li><a href="#menu">Se repérer dans l'application</a></li>
+  <li><a href="#ajouter">Ajouter une candidature</a></li>
+  <li><a href="#dashboard">Voir ses statistiques (Dashboard)</a></li>
+  <li><a href="#detail">Consulter une candidature</a></li>
+  <li><a href="#statuts">Changer un statut</a></li>
+  <li><a href="#relances">Gérer les relances</a></li>
+  <li><a href="#kanban">Organiser avec le Kanban</a></li>
+  <li><a href="#tableau">La vue tableau</a></li>
+  <li><a href="#calendrier">Le calendrier</a></li>
+  <li><a href="#negociation">Comparer ses offres</a></li>
+  <li><a href="#comptearebours">Le compte à rebours</a></li>
+  <li><a href="#entreprises">Suivre les entreprises</a></li>
+  <li><a href="#parametres">Les réglages</a></li>
+  <li><a href="#astuces">Astuces</a></li>
 </ol>
 </div>
 
-<!-- 1. INTRODUCTION -->
-<h2 id="intro">1. Introduction</h2>
-<p><strong>ProgressMist</strong> est une application web qui vous aide à organiser votre recherche d'emploi, de stage, d'alternance, de CDI ou de CDD. Elle vous permet de :</p>
+<!-- 1. C'EST QUOI -->
+<h2 id="cestquoi">1. C'est quoi ProgressMist ?</h2>
+<p>ProgressMist est un <strong>carnet de suivi</strong> pour votre recherche d'emploi, de stage, d'alternance, de CDI ou de CDD.</p>
+<p>Au lieu de vous perdre dans des dizaines d'offres, vous notez tout au même endroit :</p>
+<div class="box">
 <ul>
-  <li>📝 <strong>Suivre toutes vos candidatures</strong> — entreprise, poste, statut, contacts</li>
-  <li>📊 <strong>Visualiser vos statistiques</strong> — taux de réponse, graphiques, tendances</li>
-  <li>⏰ <strong>Programmer des relances automatiques</strong> — ne plus oublier de recontacter</li>
-  <li>📅 <strong>Compter les jours avant le début</strong> — stage ou alternance</li>
-  <li>⚖️ <strong>Comparer vos offres acceptées</strong> — salaire, avantages, technologies</li>
+  <li>📝 Les offres auxquelles vous avez postulé</li>
+  <li>📊 Où vous en êtes (en attente, entretien, acceptée...)</li>
+  <li>⏰ Les relances à faire (et l'appli vous les rappelle !)</li>
+  <li>📅 Le compte à rebours avant le début de votre stage ou alternance</li>
+  <li>⚖️ La comparaison de vos offres acceptées (salaire, avantages...)</li>
+</ul>
+</div>
+<p>Tout est sauvegardé dans votre navigateur. Pas besoin de créer un compte.</p>
+
+<!-- 2. SE REPÉRER -->
+<h2 id="menu">2. Se repérer dans l'application</h2>
+
+<h3>Le menu de gauche</h3>
+<p>C'est votre tableau de bord principal. Vous y trouvez :</p>
+<ul>
+  <li><strong>Les 4 catégories :</strong> Stage, Alternance, CDI, CDD — cliquez sur une catégorie pour voir uniquement les candidatures qui la concernent</li>
+  <li><strong>Les pages :</strong> Dashboard, Candidatures, Kanban, Tableau, Calendrier, Négociation, Analytics, Entreprises, Paramètres</li>
+  <li><strong>Le bouton « Nouvelle candidature »</strong> — pour ajouter une candidature rapidement</li>
 </ul>
 
-<!-- 2. PREMIERS PAS -->
-<h2 id="demarrage">2. Premiers pas</h2>
-
-<h3>2.1 Lancer l'application</h3>
-<p>Ouvrez un terminal dans le dossier <code>C:\Users\merim\ProgressMist</code> et tapez :</p>
-<p><code>npm run dev</code></p>
-<p>Puis ouvrez votre navigateur sur <strong>http://localhost:5173</strong>.</p>
-
-<h3>2.2 La sidebar (menu de gauche)</h3>
-<p>La sidebar est votre menu principal. Vous y trouverez :</p>
+<h3>La barre du haut</h3>
 <ul>
-  <li><strong>Les 4 catégories</strong> (Stage 🎓, Alternance 🔄, CDI 💼, CDD 📋) — cliquez pour filtrer tout le contenu</li>
-  <li><strong>9 pages de navigation</strong> — chaque page a sa fonction (voir sections suivantes)</li>
-  <li><strong>Bouton « Nouvelle candidature »</strong> — pour ajouter une candidature rapidement</li>
+  <li><strong>Le badge de catégorie</strong> (ex: « Stage ») — vous rappelle dans quelle catégorie vous êtes</li>
+  <li><strong>⏱ Le compte à rebours</strong> — jours restants avant le début de votre stage ou alternance</li>
+  <li><strong>☀️/🌙</strong> — passer du mode clair au mode sombre</li>
+  <li><strong>🔔</strong> — vos notifications (relances du jour, entretiens...)</li>
 </ul>
 
-<h3>2.3 Le header (barre du haut)</h3>
-<p>La barre du haut contient :</p>
+<!-- 3. AJOUTER UNE CANDIDATURE -->
+<h2 id="ajouter">3. Ajouter une candidature</h2>
+<p>Il y a <strong>deux façons</strong> d'ajouter une candidature :</p>
+
+<h3>Le formulaire (tout en un coup)</h3>
+<p>Cliquez sur <strong>« Nouvelle candidature »</strong> dans le menu de gauche. Remplissez les champs :</p>
 <ul>
-  <li><strong>Badge de catégorie</strong> — rappelle la catégorie active (Stage, Alternance…)</li>
-  <li><strong>Barre de recherche</strong> — pas encore fonctionnelle (à venir)</li>
-  <li><strong>⏱ Compte à rebours</strong> — jours restants avant le début du stage/alternance (voir <a href="#comptearebours">section 13</a>)</li>
-  <li><strong>☀️/🌙 Mode sombre/clair</strong> — basculer entre les deux thèmes</li>
-  <li><strong>🔔 Notifications</strong> — relances du jour, entretiens à venir</li>
+  <li><strong>Entreprise</strong> et <strong>Poste</strong> (obligatoires)</li>
+  <li><strong>Lieu</strong>, <strong>Date</strong>, <strong>Moyen</strong> (LinkedIn, Indeed, email...)</li>
+  <li><strong>Contact</strong> (nom, email, téléphone du recruteur)</li>
+  <li><strong>Documents envoyés</strong> (CV, lettre, portfolio...)</li>
+  <li><strong>Relances</strong> — voulez-vous être rappelé de relancer ? Dans combien de jours ?</li>
+  <li><strong>Notes</strong> personnelles</li>
 </ul>
+<p>Puis cliquez sur <strong>« Enregistrer »</strong>.</p>
 
-<!-- 3. DASHBOARD -->
-<h2 id="dashboard">3. Le Dashboard</h2>
-<p>Le Dashboard est la page d'accueil. Il affiche une vue d'ensemble :</p>
-
-<h3>3.1 KPI (indicateurs clés)</h3>
-<table>
-  <tr><th>Indicateur</th><th>Description</th></tr>
-  <tr><td>Total</td><td>Nombre total de candidatures dans la catégorie</td></tr>
-  <tr><td>En attente</td><td>Candidatures sans réponse</td></tr>
-  <tr><td>Entretiens</td><td>Candidatures au statut « Entretien »</td></tr>
-  <tr><td>Acceptées</td><td>Offres acceptées <span class="badge badge-green">✅</span></td></tr>
-  <tr><td>Refusées</td><td>Candidatures refusées <span class="badge badge-red">❌</span></td></tr>
-</table>
-
-<h3>3.2 KPIs secondaires</h3>
-<p>Taux de réponse, taux d'acceptation, délai moyen de réponse, nombre de relances.</p>
-
-<h3>3.3 Graphiques</h3>
-<ul>
-  <li><strong>Graphique en aires</strong> — nombre de candidatures envoyées par semaine</li>
-  <li><strong>Camembert</strong> — répartition par statut</li>
-</ul>
-
-<h3>3.4 Objectifs à venir</h3>
-<p>Affiche les dates de début de stage/alternance les plus proches avec le nombre de jours restants. Cliquez pour voir la fiche détail.</p>
-
-<h3>3.5 Comparaison des offres</h3>
-<p>Si vous avez <strong>2 offres acceptées ou plus</strong> dans la même catégorie, cette section apparaît automatiquement. Elle montre les salaires, le télétravail, les technologies. Utile pour négocier.</p>
-
-<h3>3.6 Rangée du bas</h3>
-<ul>
-  <li><strong>Relances du jour</strong> — les candidatures à relancer aujourd'hui</li>
-  <li><strong>Entretiens à venir</strong> — les prochains entretiens programmés</li>
-  <li><strong>Activité récente</strong> — les dernières actions (créations, modifications, relances)</li>
-</ul>
-
-<!-- 4. CRÉER UNE CANDIDATURE -->
-<h2 id="creer">4. Créer une candidature</h2>
-<p>Il y a <strong>deux façons</strong> de créer une candidature :</p>
-
-<h3>4.1 Formulaire complet</h3>
-<p>Cliquez sur <strong>« Nouvelle candidature »</strong> dans la sidebar. Remplissez les champs :</p>
-
-<table>
-  <tr><th>Section</th><th>Champs</th></tr>
-  <tr><td>Informations générales</td><td>Catégorie (Stage/Alternance/CDI/CDD), Statut initial</td></tr>
-  <tr><td>Entreprise & Poste</td><td>Nom entreprise*, Poste*, Lieu, Télétravail</td></tr>
-  <tr><td>💰 Rémunéré</td><td>Cochez si l'offre est rémunérée → le champ Salaire apparaît</td></tr>
-  <tr><td>Liens</td><td>Lien de l'offre, LinkedIn, Site entreprise</td></tr>
-  <tr><td>Dates</td><td>Date publication, Date candidature, Moyen (LinkedIn, Indeed…), Date début (stage/alternance uniquement)</td></tr>
-  <tr><td>Contact</td><td>Nom, Fonction, Email, Téléphone, LinkedIn du recruteur</td></tr>
-  <tr><td>Documents</td><td>CV envoyé, Lettre, Portfolio, GitHub (cases à cocher) + Upload fichiers</td></tr>
-  <tr><td>Relances</td><td>Délai (3-14 jours ou personnalisé), Nombre max (1-3 ou illimité)</td></tr>
-  <tr><td>Technologies</td><td>Ajoutez des tags (React, Python, etc.)</td></tr>
-  <tr><td>Notes</td><td>Notes personnelles</td></tr>
-</table>
-<p>* Champs obligatoires</p>
-<p>Cliquez sur <strong>« Enregistrer la candidature »</strong> en bas.</p>
-
-<h3>4.2 Assistant pas-à-pas 🤖</h3>
-
-<p>L'assistant est conçu pour vous guider <strong>question par question</strong>, sans vous submerger d'informations. C'est idéal quand vous voulez ajouter une candidature rapidement, sans réfléchir à tous les champs.</p>
-
-<h4>Comment lancer l'assistant</h4>
-<p>Deux façons d'y accéder :</p>
-<ul>
-  <li><strong>Depuis la page Candidatures :</strong> cliquez sur le bouton <strong>« Assistant »</strong> (à côté du bouton « Nouvelle candidature »)</li>
-  <li><strong>Depuis le formulaire :</strong> cliquez sur <strong>« Mode assistant »</strong> en haut du formulaire de création</li>
-</ul>
-
-<h4>Déroulé complet — les 19 questions</h4>
-<p>L'assistant pose <strong>jusqu'à 19 questions</strong>. Certaines sont <strong>conditionnelles</strong> : elles n'apparaissent que si c'est pertinent.</p>
-
-<table>
-  <tr><th>N°</th><th>Question</th><th>Type</th><th>Condition</th></tr>
-  <tr><td>1</td><td>Quel type de contrat ?</td><td>Boutons (Stage, Alternance, CDI, CDD)</td><td>Toujours</td></tr>
-  <tr><td>2</td><td>Quel est le nom de l'entreprise ?</td><td>Texte libre</td><td>Toujours</td></tr>
-  <tr><td>3</td><td>Quel est l'intitulé du poste ?</td><td>Texte libre</td><td>Toujours</td></tr>
-  <tr><td>4</td><td>Où se situe le poste ?</td><td>Texte libre</td><td>Toujours</td></tr>
-  <tr><td>5</td><td>Quand avez-vous postulé ?</td><td>Sélecteur de date</td><td>Toujours</td></tr>
-  <tr><td>6</td><td>Comment avez-vous postulé ?</td><td>Boutons (LinkedIn, Indeed, WTTJ…)</td><td>Toujours</td></tr>
-  <tr><td>7</td><td>Avez-vous le lien de l'offre ?</td><td>URL (optionnel)</td><td>Toujours</td></tr>
-  <tr><td>8</td><td>Connaissez-vous le nom d'une personne à contacter ?</td><td>Texte libre (optionnel)</td><td>Toujours</td></tr>
-  <tr><td>9</td><td>Avez-vous son email ?</td><td>Texte libre (optionnel)</td><td>Toujours</td></tr>
-  <tr><td>10</td><td>Avez-vous son téléphone ?</td><td>Texte libre (optionnel)</td><td>Toujours</td></tr>
-  <tr><td>11</td><td>Avez-vous envoyé votre CV ?</td><td>Oui / Non</td><td>Toujours</td></tr>
-  <tr><td>12</td><td>Avez-vous envoyé une lettre de motivation ?</td><td>Oui / Non</td><td>Toujours</td></tr>
-  <tr><td>13</td><td>💰 Le poste est-il rémunéré ?</td><td>Oui / Non</td><td>Toujours</td></tr>
-  <tr><td>14</td><td>💶 Quel est le montant de la rémunération ?</td><td>Texte libre</td><td>Si « Oui » à la Q13</td></tr>
-  <tr><td>15</td><td>Souhaitez-vous programmer une relance ?</td><td>Boutons (3j, 5j, 7j, 10j, 14j, personnalisé, non)</td><td>Toujours</td></tr>
-  <tr><td>16</td><td>Dans combien de jours voulez-vous relancer ?</td><td>Nombre</td><td>Si « Délai personnalisé » à la Q15</td></tr>
-  <tr><td>17</td><td>Combien de relances maximum ?</td><td>1, 2, 3 ou Illimité</td><td>Si une relance est demandée (Q15)</td></tr>
-  <tr><td>18</td><td>Une note personnelle à ajouter ?</td><td>Texte long (optionnel)</td><td>Toujours</td></tr>
-  <tr><td>19</td><td>—</td><td>Bouton « Générer la fiche ✨ »</td><td>Toujours (dernière étape)</td></tr>
-</table>
-
-<h4>Interface de l'assistant</h4>
-
-<p><strong>Barre de progression</strong></p>
-<ul>
-  <li>Affiche « Étape X sur Y » à gauche et le pourcentage à droite</li>
-  <li>Une barre colorée (violet → violet clair) se remplit au fur et à mesure</li>
-  <li>Animation fluide de 500ms entre chaque étape</li>
-</ul>
-
-<p><strong>Carte de question</strong></p>
-<ul>
-  <li>Fond vitré (glassmorphism) avec bordures arrondies</li>
-  <li>Le titre de l'étape (ex: « entreprise ») dans un petit badge violet</li>
-  <li>La question en grand, centrée, en police display</li>
-  <li>Pour les <strong>questions à choix</strong> : des boutons larges, un par option. Cliquer sur une option = sélection + passage automatique à la question suivante (après 150ms)</li>
-  <li>Pour les <strong>questions texte/date/URL</strong> : un champ de saisie centré, large, avec autofocus. Appuyez sur <strong>Entrée</strong> ou cliquez sur <strong>Continuer</strong> pour passer à la suite</li>
-  <li>Pour les <strong>notes</strong> (textarea) : une zone de texte redimensionnable, puis le bouton Continuer</li>
-</ul>
-
-<h4>Fonctionnalités avancées</h4>
-
-<table>
-  <tr><th>Fonctionnalité</th><th>Description</th></tr>
-  <tr><td>🎯 <strong>Catégorie pré-remplie</strong></td><td>Si vous êtes déjà dans la catégorie « Stage », l'assistant démarre avec « Stage » présélectionné</td></tr>
-  <tr><td>⏩ <strong>Auto-avance</strong></td><td>Pour les questions à choix (select), cliquer sur une option fait passer automatiquement à la question suivante — pas besoin de cliquer sur Continuer</td></tr>
-  <tr><td>⌨️ <strong>Raccourci clavier</strong></td><td>Appuyez sur <strong>Entrée</strong> pour valider une réponse texte et passer à la suite (sauf pour le textarea)</td></tr>
-  <tr><td>⬅️ <strong>Retour en arrière</strong></td><td>À partir de la 2e question, un lien « ← Revenir à la question précédente » apparaît en bas. Vous pouvez modifier vos réponses précédentes</td></tr>
-  <tr><td>🎬 <strong>Animation de transition</strong></td><td>Entre chaque question, la carte glisse vers la gauche (avance) ou vers la droite (retour) avec un fondu de 300ms</td></tr>
-  <tr><td>🔀 <strong>Questions conditionnelles</strong></td><td>Les questions 14 (salaire), 16 (délai personnalisé) et 17 (max relances) n'apparaissent que si leur condition est remplie</td></tr>
-  <tr><td>✨ <strong>Dernière étape</strong></td><td>Le bouton « Continuer » devient « Générer la fiche » avec une icône Sparkles</td></tr>
-  <tr><td>📝 <strong>Champs optionnels</strong></td><td>Le lien de l'offre, le contact, l'email et le téléphone peuvent être laissés vides</td></tr>
-</table>
-
-<h4>Que se passe-t-il à la fin ?</h4>
+<h3>L'assistant (question par question)</h3>
+<p>Vous préférez répondre à des questions une par une ? Cliquez sur <strong>« Assistant »</strong>. L'application vous guide pas à pas :</p>
 <ol class="steps">
-  <li>Toutes vos réponses sont compilées dans une fiche candidature complète</li>
-  <li>La candidature est créée avec le statut <strong>« En attente »</strong></li>
-  <li>Si vous avez demandé une relance, la date de prochaine relance est automatiquement calculée</li>
-  <li>Un historique est créé : « Candidature créée via l'assistant »</li>
-  <li>Vous êtes redirigé vers la <strong>fiche détail</strong> de la candidature fraîchement créée</li>
+  <li>Quel type de contrat ?</li>
+  <li>Le nom de l'entreprise ?</li>
+  <li>L'intitulé du poste ?</li>
+  <li>Où ?</li>
+  <li>Quand avez-vous postulé ?</li>
+  <li>Par quel moyen ?</li>
+  <li>Le lien de l'offre ?</li>
+  <li>Un contact ?</li>
+  <li>CV envoyé ? Lettre ?</li>
+  <li>Est-ce rémunéré ?</li>
+  <li>Voulez-vous une relance automatique ?</li>
+  <li>Des notes ?</li>
 </ol>
+<p>À la fin, votre fiche est créée automatiquement. Vous pouvez revenir en arrière à tout moment.</p>
 
-<h4>Exemple de parcours complet</h4>
+<div class="tip">💡 <strong>Lequel choisir ?</strong> Le formulaire si vous voulez tout remplir d'un coup. L'assistant si vous préférez être guidé, surtout sur téléphone.</div>
 
-<div class="tip">💡 <strong>Scénario :</strong> Vous venez de postuler à un stage de développeur chez OpenClassrooms via LinkedIn. Voici le parcours assistant :</div>
-
-<ol class="steps">
-  <li><strong>Contrat :</strong> Stage (cliquez → auto-avance)</li>
-  <li><strong>Entreprise :</strong> Tapez « OpenClassrooms » → Entrée</li>
-  <li><strong>Poste :</strong> Tapez « Développeur Full-Stack » → Entrée</li>
-  <li><strong>Lieu :</strong> Tapez « Paris » → Entrée</li>
-  <li><strong>Date :</strong> Sélectionnez la date du jour → Continuer</li>
-  <li><strong>Moyen :</strong> Cliquez sur « LinkedIn » → auto-avance</li>
-  <li><strong>Lien :</strong> Collez l'URL → Continuer</li>
-  <li><strong>Contact :</strong> « Marie Dupont » → Continuer</li>
-  <li><strong>Email :</strong> « marie@openclassrooms.com » → Continuer</li>
-  <li><strong>Téléphone :</strong> Laissez vide → Continuer</li>
-  <li><strong>CV :</strong> Oui → auto-avance</li>
-  <li><strong>Lettre :</strong> Oui → auto-avance</li>
-  <li><strong>Rémunéré :</strong> Oui → auto-avance</li>
-  <li><strong>Salaire :</strong> « 1200€/mois » → Continuer</li>
-  <li><strong>Relance :</strong> « 7 jours » → auto-avance</li>
-  <li><em>(Q16 sautée — pas de délai personnalisé)</em></li>
-  <li><strong>Max relances :</strong> « 2 relances » → auto-avance</li>
-  <li><strong>Notes :</strong> « Poste très intéressant, équipe tech sympa » → Continuer</li>
-  <li>✨ <strong>Générer la fiche</strong> → Redirection vers la fiche détail</li>
-</ol>
-
-<p><strong>Temps estimé :</strong> ~2 minutes pour remplir une candidature complète.</p>
-
-<h4>Quand utiliser l'assistant plutôt que le formulaire ?</h4>
-
-<table>
-  <tr><th>Situation</th><th>Recommandation</th></tr>
-  <tr><td>Vous venez de postuler et voulez enregistrer rapidement</td><td>🤖 <strong>Assistant</strong> — rapide, guidé, pas de distraction</td></tr>
-  <tr><td>Vous voulez remplir tous les champs (technologies, portfolio, GitHub…)</td><td>📝 <strong>Formulaire</strong> — tous les champs visibles d'un coup</td></tr>
-  <tr><td>Vous êtes sur mobile</td><td>🤖 <strong>Assistant</strong> — une question à la fois, adapté au petit écran</td></tr>
-  <tr><td>Vous voulez modifier plusieurs champs après coup</td><td>📝 <strong>Formulaire</strong> puis édition — plus efficace</td></tr>
-  <tr><td>Vous découvrez l'application</td><td>🤖 <strong>Assistant</strong> — permet de comprendre les champs un par un</td></tr>
-</table>
-
-<div class="tip">💡 <strong>Astuce :</strong> Même après avoir créé une candidature via l'assistant, vous pouvez toujours <strong>compléter les champs manquants</strong> (technologies, portfolio, pièces jointes…) depuis la fiche détail en cliquant sur « Modifier ».</div>
-
-<!-- 5. FICHE DÉTAIL -->
-<h2 id="detail">5. Fiche détail d'une candidature</h2>
-<p>Cliquez sur n'importe quelle candidature pour ouvrir sa fiche détail. Vous y trouverez :</p>
-
-<h3>5.1 Partie gauche (informations)</h3>
+<!-- 4. DASHBOARD -->
+<h2 id="dashboard">4. Voir ses statistiques (Dashboard)</h2>
+<p>Le Dashboard est la première page que vous voyez. Il vous montre :</p>
 <ul>
-  <li><strong>Cartes d'infos rapides</strong> — Lieu, Date de candidature, Méthode, Salaire, Compte à rebours (J-X)</li>
-  <li><strong>Liens</strong> — Offre, LinkedIn, Site entreprise (cliquables)</li>
-  <li><strong>Contact</strong> — Nom, fonction, email, téléphone</li>
-  <li><strong>Technologies</strong> — Badges colorés</li>
-  <li><strong>Documents envoyés</strong> — CV, Lettre, Portfolio, GitHub (✅ ou ❌)</li>
-  <li><strong>Pièces jointes</strong> — Upload de fichiers (PDF, Word, images)</li>
-  <li><strong>Session de négociation</strong> — Apparaît si la candidature est « Acceptée » et qu'il y a d'autres offres acceptées (comparaison salaires, avantages)</li>
-  <li><strong>Compte à rebours</strong> — Si stage/alternance avec date de début définie</li>
-  <li><strong>Notes</strong> — Ajoutez des notes libres</li>
+  <li><strong>Le nombre total</strong> de candidatures</li>
+  <li><strong>Combien sont en attente</strong>, en entretien, acceptées, refusées</li>
+  <li><strong>Votre taux de réponse</strong> — quel pourcentage d'entreprises vous a répondu</li>
+  <li><strong>Les relances du jour</strong> — qui devez-vous recontacter aujourd'hui ?</li>
+  <li><strong>Les entretiens à venir</strong></li>
+  <li><strong>Un graphique</strong> qui montre la répartition de vos candidatures</li>
 </ul>
 
-<h3>5.2 Partie droite (sidebar)</h3>
+<!-- 5. CONSULTER UNE CANDIDATURE -->
+<h2 id="detail">5. Consulter une candidature</h2>
+<p>Cliquez sur n'importe quelle candidature pour ouvrir sa fiche détail. Vous y verrez :</p>
 <ul>
-  <li><strong>Changer le statut</strong> — Cliquez sur un statut pour le modifier (À préparer → En attente → Entretien → Acceptée…). Si vous passez en « Acceptée », une animation 🎉 apparaît ! Si « Refusée », un message d'encouragement 💪 s'affiche.</li>
-  <li><strong>Relances</strong> — Voir le nombre de relances effectuées, la prochaine date, et le bouton « Relance effectuée »</li>
-  <li><strong>Historique</strong> — Toutes les actions enregistrées (création, modification, relance, changement de statut)</li>
+  <li><strong>Toutes les informations</strong> que vous avez remplies</li>
+  <li><strong>Le statut actuel</strong> (à droite) — vous pouvez le changer en un clic</li>
+  <li><strong>Les relances</strong> — la prochaine date prévue, le nombre déjà fait</li>
+  <li><strong>L'historique</strong> — tout ce qui s'est passé sur cette candidature</li>
+  <li><strong>Les pièces jointes</strong> — vous pouvez ajouter votre CV, lettre de motivation, etc.</li>
 </ul>
 
-<h3>5.3 Modifier une candidature</h3>
-<p>Cliquez sur <strong>« Modifier »</strong> en haut à droite. Un formulaire d'édition s'ouvre avec tous les champs modifiables.</p>
-
-<h3>5.4 Supprimer une candidature</h3>
-<p>Cliquez sur l'icône 🗑️ en haut à droite, puis confirmez.</p>
-
-<!-- 6. KANBAN -->
-<h2 id="kanban">6. Vue Kanban</h2>
-<p>La vue Kanban fonctionne comme Trello :</p>
+<h3>Modifier ou supprimer</h3>
 <ul>
-  <li><strong>7 colonnes</strong> — une par statut</li>
-  <li><strong>Drag & drop</strong> — glissez-déposez une carte d'une colonne à l'autre pour changer son statut</li>
-  <li>Quand vous déposez une carte dans « Acceptée » → <strong>animation de félicitations 🎉</strong></li>
-  <li>Quand vous déposez dans « Refusée » → <strong>message d'encouragement 💪</strong></li>
+  <li><strong>Modifier :</strong> bouton « Modifier » en haut à droite</li>
+  <li><strong>Supprimer :</strong> icône 🗑️ en haut à droite, puis confirmez</li>
+</ul>
+
+<!-- 6. CHANGER UN STATUT -->
+<h2 id="statuts">6. Changer un statut</h2>
+<p>Chaque candidature a un statut. Voici les 7 statuts possibles :</p>
+<div class="box">
+<ul>
+  <li>🔵 <strong>À préparer</strong> — vous avez repéré l'offre, pas encore postulé</li>
+  <li>🟡 <strong>En attente</strong> — vous avez postulé, en attente de réponse</li>
+  <li>🟣 <strong>Relance prévue</strong> — une relance est programmée</li>
+  <li>🟠 <strong>Entretien</strong> — vous avez décroché un entretien</li>
+  <li>🟢 <strong>Acceptée</strong> — offre acceptée 🎉</li>
+  <li>🔴 <strong>Refusée</strong> — candidature refusée</li>
+  <li>⚫ <strong>Abandonnée</strong> — vous avez laissé tomber</li>
+</ul>
+</div>
+<p><strong>Comment changer le statut ?</strong></p>
+<ul>
+  <li>Dans la <strong>fiche détail</strong> : cliquez sur le nouveau statut dans la colonne de droite</li>
+  <li>Dans le <strong>Kanban</strong> : glissez-déposez la carte dans une autre colonne</li>
+  <li>Dans le <strong>Tableau</strong> : cliquez sur le badge statut et choisissez le nouveau</li>
+</ul>
+<div class="tip">🎉 Quand vous passez une candidature en « Acceptée », une petite animation de félicitations apparaît !</div>
+
+<!-- 7. RELANCES -->
+<h2 id="relances">7. Gérer les relances</h2>
+<p>Les relances vous aident à ne pas oublier de recontacter une entreprise.</p>
+
+<h3>Programmer une relance</h3>
+<p>Quand vous créez une candidature, vous pouvez choisir :</p>
+<ul>
+  <li><strong>Dans combien de jours</strong> relancer (3, 5, 7, 10, 14 jours ou personnalisé)</li>
+  <li><strong>Combien de fois</strong> maximum (1, 2, 3 ou illimité)</li>
+</ul>
+
+<h3>Faire une relance</h3>
+<p>Quand le jour arrive, l'application vous le signale (dans les notifications 🔔 et sur le Dashboard). Allez sur la fiche détail et cliquez sur <strong>« Relance effectuée »</strong>. La prochaine relance est automatiquement reprogrammée.</p>
+
+<!-- 8. KANBAN -->
+<h2 id="kanban">8. Organiser avec le Kanban</h2>
+<p>Le Kanban ressemble à un tableau Trello avec des colonnes. Chaque colonne = un statut.</p>
+<ul>
+  <li><strong>Glissez-déposez</strong> une carte d'une colonne à l'autre pour changer son statut</li>
   <li>Cliquez sur une carte pour ouvrir sa fiche détail</li>
+  <li>Idéal pour visualiser d'un coup d'œil où en sont toutes vos candidatures</li>
 </ul>
 
-<!-- 7. TABLEAU -->
-<h2 id="tableau">7. Vue Tableau</h2>
-<p>La vue Tableau permet de :</p>
+<!-- 9. TABLEAU -->
+<h2 id="tableau">9. La vue tableau</h2>
+<p>Une vue plus classique, comme un tableur :</p>
 <ul>
-  <li><strong>Trier</strong> par colonne — cliquez sur l'en-tête (Entreprise, Poste, Date, Statut)</li>
-  <li><strong>Filtrer</strong> par statut ou méthode de candidature</li>
-  <li><strong>Rechercher</strong> par entreprise, poste, lieu, contact, notes</li>
-  <li><strong>Changer le statut</strong> directement — cliquez sur le badge statut → un dropdown apparaît → sélectionnez le nouveau statut. La célébration se déclenche aussi depuis ici !</li>
-  <li>Icônes 👁 Voir et ✏️ Modifier pour chaque ligne</li>
+  <li><strong>Trier</strong> en cliquant sur les en-têtes (Entreprise, Poste, Date, Statut)</li>
+  <li><strong>Rechercher</strong> avec la barre de recherche (tapez un nom d'entreprise, un poste...)</li>
+  <li><strong>Filtrer</strong> par statut ou par méthode de candidature</li>
+  <li><strong>Changer le statut</strong> directement en cliquant sur le badge</li>
 </ul>
 
-<!-- 8. CALENDRIER -->
-<h2 id="calendrier">8. Calendrier</h2>
-<p>Le calendrier affiche :</p>
+<!-- 10. CALENDRIER -->
+<h2 id="calendrier">10. Le calendrier</h2>
+<p>Le calendrier vous montre :</p>
 <ul>
-  <li><strong>📨 Candidatures</strong> (bleu) — date d'envoi</li>
-  <li><strong>🔄 Relances</strong> (violet) — date de relance programmée</li>
-  <li><strong>🎯 Entretiens</strong> (orange) — date d'entretien</li>
+  <li>📨 <strong>Quand vous avez postulé</strong> (en bleu)</li>
+  <li>🔄 <strong>Quand relancer</strong> (en violet)</li>
+  <li>🎯 <strong>Quand sont vos entretiens</strong> (en orange)</li>
 </ul>
-<p>Naviguez entre les mois avec les flèches ◀ ▶. Basculez entre vue Jour/Semaine/Mois.</p>
+<p>Naviguez entre les mois avec les flèches ◀ ▶.</p>
 
-<!-- 9. NÉGOCIATION -->
-<h2 id="negociation">9. Page Négociation ⚖️</h2>
-<p>Accessible depuis la sidebar (⚖️ Négociation). Cette page compare <strong>toutes vos offres acceptées</strong> :</p>
-
-<h3>9.1 Les 3 états</h3>
+<!-- 11. NÉGOCIATION -->
+<h2 id="negociation">11. Comparer ses offres</h2>
+<p>La page <strong>Négociation</strong> (accessible depuis le menu) vous permet de <strong>comparer vos offres acceptées</strong>.</p>
+<p>Si vous avez plusieurs offres, vous voyez :</p>
 <ul>
-  <li><strong>Aucune offre acceptée</strong> → Message d'encouragement + bouton vers les candidatures</li>
-  <li><strong>1 seule offre</strong> → Carte de félicitations 🎉 avec le détail</li>
-  <li><strong>2+ offres</strong> → Comparaison complète avec graphiques</li>
+  <li>Le <strong>salaire</strong> de chaque offre</li>
+  <li>🏆 Laquelle est <strong>la mieux payée</strong></li>
+  <li>Les <strong>technologies</strong>, le lieu, le télétravail</li>
+  <li>Des <strong>conseils de négociation</strong></li>
 </ul>
+<div class="tip">💡 Pensez à indiquer si l'offre est rémunérée et à quel montant quand vous créez votre candidature. C'est ce qui alimente cette page.</div>
 
-<h3>9.2 La comparaison</h3>
-<ul>
-  <li><strong>4 cartes Insights</strong> — Meilleur salaire, Salaire moyen, Écart salarial, Nombre d'offres</li>
-  <li><strong>Grille de cartes</strong> — une par offre avec :
-    <ul>
-      <li>🏆 Badge « Meilleure offre » sur le salaire le plus élevé</li>
-      <li>Barre de progression du salaire (par rapport au max)</li>
-      <li>Écart en % pour les autres offres</li>
-      <li>Technologies, lieu, télétravail, contact</li>
-      <li>Bouton « Voir le détail »</li>
-    </ul>
-  </li>
-</ul>
+<!-- 12. COMPTE À REBOURS -->
+<h2 id="comptearebours">12. Le compte à rebours</h2>
+<p>Dans la barre du haut, vous voyez un petit badge <strong>« Compte à rebours »</strong>. Il concerne les <strong>stages et alternances</strong>.</p>
 
-<h3>9.3 Conseils de négociation</h3>
-<p>3 conseils pratiques en bas de page pour vous aider à négocier.</p>
+<h3>Définir une date de début</h3>
+<ol class="steps">
+  <li>Cliquez sur <strong>« Compte à rebours »</strong> dans la barre du haut</li>
+  <li>Choisissez la date de début de votre stage ou alternance</li>
+  <li>Cliquez sur <strong>Valider</strong></li>
+</ol>
 
-<!-- 10. ANALYTICS -->
-<h2 id="analytics">10. Analytics (statistiques)</h2>
-<p>La page Analytics fournit des statistiques détaillées :</p>
-<ul>
-  <li><strong>KPIs :</strong> Taux de réponse, Taux d'acceptation, Délai moyen, Entretiens décrochés</li>
-  <li><strong>Graphique 1 :</strong> Candidatures par semaine (barres)</li>
-  <li><strong>Graphique 2 :</strong> Répartition par statut (camembert)</li>
-  <li><strong>Graphique 3 :</strong> Répartition par plateforme — LinkedIn, Indeed, WTTJ…</li>
-  <li><strong>Graphique 4 :</strong> Comparaison entre catégories (Stage vs Alternance vs CDI vs CDD)</li>
-  <li><strong>Tableau récapitulatif</strong> — toutes les catégories en un coup d'œil</li>
-</ul>
-
-<!-- 11. ENTREPRISES -->
-<h2 id="entreprises">11. Suivi des entreprises</h2>
-<p>Ajoutez des entreprises pour :</p>
-<ul>
-  <li>Suivre vos contacts RH et recruteurs</li>
-  <li>Voir combien de candidatures vous avez envoyées chez chaque entreprise</li>
-  <li>Accéder rapidement aux candidatures liées</li>
-</ul>
-
-<!-- 12. PARAMÈTRES -->
-<h2 id="parametres">12. Paramètres</h2>
-<h3>12.1 Apparence</h3>
-<ul>
-  <li><strong>Mode sombre / clair</strong> — basculez avec le toggle</li>
-  <li><strong>Couleur du thème</strong> — choisissez parmi 6 couleurs (violet, bleu, rose, vert, orange, cyan). Toute l'interface change de couleur instantanément !</li>
-</ul>
-
-<h3>12.2 Relances par défaut</h3>
-<ul>
-  <li><strong>Délai avant relance</strong> — 3, 5, 7, 10, 14 jours ou personnalisé</li>
-  <li><strong>Nombre maximum de relances</strong> — 1, 2, 3 ou illimité</li>
-</ul>
-
-<h3>12.3 Dates & Notifications</h3>
-<ul>
-  <li><strong>Format des dates</strong> — JJ/MM/AAAA, MM/JJ/AAAA, ou AAAA-MM-JJ</li>
-  <li><strong>Notifications</strong> — activer/désactiver</li>
-  <li><strong>Sauvegarde automatique</strong> — activer/désactiver</li>
-</ul>
-
-<h3>12.4 Import / Export</h3>
-<ul>
-  <li><strong>Exporter JSON</strong> — sauvegarde complète de toutes vos données</li>
-  <li><strong>Exporter CSV</strong> — format tableur (Excel, Google Sheets)</li>
-  <li><strong>Importer JSON</strong> — restaurer une sauvegarde</li>
-</ul>
-
-<h3>12.5 Zone dangereuse</h3>
-<p>⚠️ <strong>Réinitialiser toutes les données</strong> — supprime TOUT. Irréversible.</p>
-
-<!-- 13. COMPTE À REBOURS -->
-<h2 id="comptearebours">13. Compte à rebours</h2>
-<p>Le compte à rebours se trouve dans la <strong>barre du haut</strong>, juste après la barre de recherche. Il concerne les <strong>stages et alternances</strong>.</p>
-
-<h3>13.1 Définir une date</h3>
-<ul>
-  <li>Cliquez sur <strong>« Compte à rebours »</strong> (bouton gris dans le header)</li>
-  <li>Un popup s'ouvre avec un sélecteur de date</li>
-  <li>Choisissez la date de début → cliquez sur <strong>Valider</strong></li>
-</ul>
-
-<h3>13.2 Voir le compte à rebours</h3>
-<p>Une fois la date définie, le badge devient coloré :</p>
+<h3>Ce que vous voyez</h3>
+<p>Une fois la date définie, le badge devient coloré et affiche le temps restant :</p>
 <ul>
   <li>🟢 <strong>Vert</strong> = c'est aujourd'hui !</li>
   <li>🟠 <strong>Orange</strong> = dans 7 jours ou moins</li>
-  <li>🔵 <strong>Bleu</strong> = plus de 7 jours</li>
+  <li>🔵 <strong>Bleu</strong> = dans plus de 7 jours</li>
 </ul>
-<p>Format affiché : <code>15/09 −2 mois 15 jours</code> ou <code>−45 jours</code> ou <code>Aujourd'hui</code>.</p>
+<p>Exemple : <code>15/09 −2 mois 15 jours</code> ou <code>−45 jours</code> ou <code>Aujourd'hui</code>.</p>
 
-<h3>13.3 Modifier ou supprimer</h3>
+<h3>Modifier ou réinitialiser</h3>
 <ul>
   <li><strong>Modifier :</strong> cliquez sur le badge → changez la date → Valider</li>
   <li><strong>Réinitialiser :</strong> cliquez sur le badge → bouton « Réinitialiser »</li>
 </ul>
+<p>Le compte à rebours se met à jour tout seul.</p>
 
-<p>Le compte à rebours se met à jour <strong>automatiquement toutes les minutes</strong>.</p>
+<!-- 13. ENTREPRISES -->
+<h2 id="entreprises">13. Suivre les entreprises</h2>
+<p>La page <strong>Entreprises</strong> vous permet de garder une fiche par entreprise avec :</p>
+<ul>
+  <li>Le nom, le secteur, la taille</li>
+  <li>Les contacts RH et recruteurs</li>
+  <li>Toutes les candidatures que vous avez envoyées chez cette entreprise</li>
+</ul>
+<p>Cliquez sur <strong>« Ajouter une entreprise »</strong> pour commencer.</p>
 
-<div class="tip">💡 <strong>Astuce :</strong> Si vous avez plusieurs stages/alternances, le compte à rebours affiche automatiquement le plus proche. Pour changer lequel est suivi, définissez une date uniquement sur celui que vous voulez suivre.</div>
+<!-- 14. PARAMÈTRES -->
+<h2 id="parametres">14. Les réglages</h2>
 
-<!-- 14. ASTUCES -->
-<h2 id="astuces">14. Astuces & bonnes pratiques</h2>
+<h3>Apparence</h3>
+<ul>
+  <li><strong>Mode sombre / clair</strong></li>
+  <li><strong>Couleur du thème</strong> — 6 couleurs au choix, tout change instantanément</li>
+</ul>
 
-<h3>14.1 Organisez par catégorie</h3>
-<p>Utilisez les 4 catégories (Stage, Alternance, CDI, CDD) pour séparer vos recherches. Les statistiques, le dashboard et toutes les pages sont filtrés par catégorie.</p>
+<h3>Relances par défaut</h3>
+<ul>
+  <li><strong>Délai</strong> avant la première relance</li>
+  <li><strong>Nombre maximum</strong> de relances</li>
+</ul>
 
-<h3>14.2 Utilisez les relances</h3>
-<p>Après avoir postulé, programmez une relance automatique (ex : 7 jours). L'application vous notifiera quand il sera temps de recontacter. Cliquez sur « Relance effectuée » — la prochaine est automatiquement reprogrammée.</p>
+<h3>Format des dates</h3>
+<p>Choisissez entre JJ/MM/AAAA, MM/JJ/AAAA ou AAAA-MM-JJ.</p>
 
-<h3>14.3 Renseignez le salaire</h3>
-<p>Cochez <strong>💰 Rémunéré</strong> et indiquez le salaire. Cela alimente la page <strong>Négociation</strong> qui compare toutes vos offres acceptées. Très utile pour négocier !</p>
+<h3>Sauvegarder et restaurer</h3>
+<ul>
+  <li><strong>Exporter JSON</strong> — sauvegarde complète de toutes vos données</li>
+  <li><strong>Exporter CSV</strong> — pour ouvrir dans Excel</li>
+  <li><strong>Importer JSON</strong> — restaurer une sauvegarde</li>
+</ul>
 
-<h3>14.4 Glissez-déposez dans le Kanban</h3>
-<p>Le Kanban est le moyen le plus rapide de changer le statut d'une candidature. Glissez une carte de « En attente » vers « Entretien » quand vous décrochez un entretien !</p>
+<h3>Guide d'utilisation</h3>
+<p>Un bouton pour retrouver ce guide à tout moment.</p>
 
-<h3>14.5 Exportez régulièrement</h3>
-<p>Faites un export JSON de temps en temps (Paramètres → Export JSON) pour sauvegarder vos données.</p>
+<div class="tip">⚠️ <strong>Attention :</strong> Tout est sauvegardé dans votre navigateur. Si vous changez de navigateur ou supprimez vos données de navigation, vous perdrez vos candidatures. Pensez à exporter régulièrement !</div>
 
-<h3>14.6 Changez la couleur du thème</h3>
-<p>Allez dans Paramètres → Apparence et choisissez une couleur qui vous plaît. Tout change instantanément !</p>
+<!-- 15. ASTUCES -->
+<h2 id="astuces">15. Astuces</h2>
 
-<h3>14.7 Ajoutez des pièces jointes</h3>
-<p>Dans la fiche détail, vous pouvez uploader votre CV, lettre de motivation, portfolio, certificats — tout est sauvegardé dans le navigateur.</p>
-
-<h3>14.8 Les 7 statuts</h3>
-<table>
-  <tr><th>Statut</th><th>Quand l'utiliser</th></tr>
-  <tr><td>🔵 À préparer</td><td>Offre repérée, pas encore postulé</td></tr>
-  <tr><td>🟡 En attente</td><td>Candidature envoyée, en attente de réponse</td></tr>
-  <tr><td>🟣 Relance prévue</td><td>Une relance est programmée</td></tr>
-  <tr><td>🟠 Entretien</td><td>Entretien décroché</td></tr>
-  <tr><td>🟢 Acceptée</td><td>Offre acceptée 🎉</td></tr>
-  <tr><td>🔴 Refusée</td><td>Candidature refusée 💪</td></tr>
-  <tr><td>⚫ Abandonnée</td><td>Vous avez abandonné la candidature</td></tr>
-</table>
-
-<h3>14.9 Sauvegarde automatique</h3>
-<p>Tout est sauvegardé automatiquement dans votre navigateur (localStorage). Pas besoin de serveur, pas d'inscription. Mais attention : si vous changez de navigateur ou supprimez les données du navigateur, vous perdrez vos candidatures. <strong>Exportez régulièrement !</strong></p>
+<div class="box">
+<ul>
+  <li>📂 <strong>Séparez bien vos catégories</strong> — Stage, Alternance, CDI, CDD. Les statistiques sont calculées séparément pour chacune.</li>
+  <li>⏰ <strong>Utilisez les relances</strong> — programmez-en une 7 jours après avoir postulé pour ne pas oublier de recontacter.</li>
+  <li>💰 <strong>Indiquez le salaire</strong> quand l'offre est rémunérée. Ça vous servira pour comparer vos offres plus tard.</li>
+  <li>🖱️ <strong>Glissez-déposez dans le Kanban</strong> — c'est le moyen le plus rapide de changer un statut.</li>
+  <li>💾 <strong>Exportez de temps en temps</strong> — faites un export JSON dans les Paramètres pour sauvegarder vos données.</li>
+  <li>🎨 <strong>Changez la couleur du thème</strong> dans les Paramètres si le violet ne vous plaît pas.</li>
+  <li>📅 <strong>Ajoutez vos dates d'entretien</strong> — elles apparaîtront sur le calendrier.</li>
+</ul>
+</div>
 
 <footer>
   <p><strong>ProgressMist</strong> — Never lose track of your job applications</p>
-  <p>Créé par <strong>Meriem M</strong> · <a href="https://www.linkedin.com/in/meriem-m-a87393387" style="color:#a855f7;">LinkedIn</a></p>
+  <p>Créé par <strong>Meriem M</strong> · <a href="https://www.linkedin.com/in/meriem-m-a87393387">LinkedIn</a></p>
 </footer>
 
 </body>

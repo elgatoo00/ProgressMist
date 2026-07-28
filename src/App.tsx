@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAppStore } from '@/store/useAppStore';
 import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
@@ -77,7 +77,7 @@ export default function App() {
   }, [checkRelances, addNotification, applications]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="flex h-screen overflow-hidden bg-[var(--color-bg)]">
         {/* Mobile overlay */}
         {mobileSidebarOpen && (
@@ -144,6 +144,6 @@ export default function App() {
         {/* Notifications panel */}
         <NotificationsPanel open={notifsOpen} onClose={() => setNotifsOpen(false)} />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
