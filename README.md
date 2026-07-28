@@ -2,7 +2,22 @@
 
 > Une application moderne de suivi de candidatures conçue pour aider les étudiants et les chercheurs d'emploi à organiser efficacement leurs recherches.
 
-🌐 **Démo :** https://elgatoo00.github.io/ProgressMist/#/dashboard
+## 📸 Aperçu
+
+> Dashboard
+
+<img width="2560" height="1260" alt="image" src="https://github.com/user-attachments/assets/70496ebe-8cc1-4028-8000-fc86910e926b" />
+
+> Candidature
+
+<img width="2560" height="1244" alt="image" src="https://github.com/user-attachments/assets/f6f1b194-5ad6-4115-b820-2d4c14901dc3" />
+
+>Negociation entre 2 offres
+
+<img width="2560" height="1238" alt="image" src="https://github.com/user-attachments/assets/48df60b3-29cd-469e-800c-67f50159891b" />
+
+
+🌐 **Lien :** https://elgatoo00.github.io/ProgressMist/#/dashboard
 
 ---
 
@@ -22,16 +37,6 @@
 - 📱 Interface responsive
 - 💾 Sauvegarde locale (LocalStorage)
 - ⚡ Application rapide (SPA)
-
----
-
-## 📸 Aperçu
-
-> Ajoutez ici des captures d'écran de l'application.
-
-| Dashboard | Liste des candidatures |
-|-----------|-------------------------|
-| ![](docs/dashboard.png) | ![](docs/candidatures.png) |
 
 ---
 
@@ -73,21 +78,6 @@ npm run build
 
 Le projet est déployé avec **GitHub Pages**. GitHub Pages permet d'héberger gratuitement des sites statiques directement depuis un dépôt GitHub. :contentReference[oaicite:0]{index=0}
 
----
-
-## 📂 Structure du projet
-
-```
-src/
-├── components/
-├── pages/
-├── store/
-├── hooks/
-├── services/
-├── types/
-├── utils/
-└── assets/
-```
 
 ---
 
