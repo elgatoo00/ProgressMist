@@ -1,0 +1,1 @@
+import{Et as e,Tt as t}from"./index-CJ-6josz.js";function n(n,r){let i=e(n);if(isNaN(r))return t(n,NaN);if(!r)return i;let a=i.getDate(),o=t(n,i.getTime());return o.setMonth(i.getMonth()+r+1,0),a>=o.getDate()?o:(i.setFullYear(o.getFullYear(),o.getMonth(),a),i)}function r(t){let n=e(t);return n.setDate(1),n.setHours(0,0,0,0),n}export{n,r as t};
