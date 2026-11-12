@@ -1,0 +1,37 @@
+# Dépendances
+node_modules/
+
+# Build et caches
+dist/
+dist-ssr/
+*.tsbuildinfo
+.vite/
+.cache/
+coverage/
+
+# Environnement et secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+npm-debug.log*
+*.log
+
+# Fichiers générés localement
+*.pdf
+*.pptx
+generate-pdf.mjs
+generate-pptx.mjs
+
+# Éditeurs et outils locaux
+.vscode/
+.idea/
+.claude/
+
+# Système
+Thumbs.db
+.DS_Store
+desktop.ini
